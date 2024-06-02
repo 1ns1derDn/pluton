@@ -5,10 +5,10 @@
   "component": {
     "default": {
       "customTemplates": {
-        "component": "templates/default/template-name.component.tsx",
-        "types": "templates/default/template-name.types.ts",
-        "style": "templates/default/template-name.module.css",
-        "index": "templates/default/index.ts"
+        "component": "cli-templates/default/template-name.component.tsx",
+        "types": "cli-templates/default/template-name.types.ts",
+        "style": "cli-templates/default/template-name.module.css",
+        "index": "cli-templates/default/index.ts"
       },
       "path": "components",
       "withLazy": false,

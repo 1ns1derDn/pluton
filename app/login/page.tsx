@@ -1,4 +1,4 @@
-import { Login } from "@/pages";
+import { Login } from "@/templates";
 
 export default function HomePage() {
   return <Login />;

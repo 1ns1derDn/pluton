@@ -1,5 +1,8 @@
 .button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
 
   max-width: 460px;
@@ -14,6 +17,7 @@
   letter-spacing: 0.03em;
   text-align: center;
   color: #564730;
+  text-decoration: none;
 
   cursor: pointer;
   background-color: #e0d0b9;
