@@ -20,7 +20,7 @@ export function Login({ className, children, ...otherProps }: LoginProps) {
           <Typography className={styles.title} variant="title">
             Вход в личный кабинет
           </Typography>
-          <Typography className={styles.subtitle} variant="subtitle">
+          <Typography className={styles.subtitle} variant="text">
             Для авторизации введите логин и пароль из письма
           </Typography>
           <form className={styles.from}>
