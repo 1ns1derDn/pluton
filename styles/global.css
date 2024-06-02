@@ -13,5 +13,6 @@ body {
 }
 
 body {
+  color: #fff;
   background: linear-gradient(180deg, #5c638f 0%, #342049 100%);
 }

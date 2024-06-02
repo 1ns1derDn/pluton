@@ -1,2 +1,35 @@
 .login {
+  padding: 100px 0;
+}
+
+.logo {
+  margin-bottom: 60px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin-bottom: 40px;
+}
+
+.log {
+  margin-bottom: 20px;
+}
+
+.password {
+  margin-bottom: 40px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.from {
+  max-width: 480px;
+  width: 100%;
 }
