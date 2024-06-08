@@ -1,13 +1,29 @@
 // libs
-import React from "react";
+import React, { LegacyRef, forwardRef } from "react";
 import cn from "classnames";
-
 //types
 import { InputProps } from "./input.types";
 
 //styles
 import styles from "./input.module.css";
 
-export function Input({ className, children, ...otherProps }: InputProps) {
-  return <input className={cn([styles.input, className])} {...otherProps} />;
+function ComponentInput(
+  { className, children, isError, ...otherProps }: InputProps,
+  ref: LegacyRef<HTMLInputElement>
+) {
+  return (
+    <input
+      ref={ref}
+      className={cn([
+        styles.input,
+        className,
+        {
+          [styles.error]: isError,
+        },
+      ])}
+      {...otherProps}
+    />
+  );
 }
+
+export const Input = forwardRef(ComponentInput);

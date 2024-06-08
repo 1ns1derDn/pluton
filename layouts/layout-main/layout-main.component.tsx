@@ -1,7 +1,6 @@
 // libs
 import React from "react";
 import cn from "classnames";
-import Image from "next/image";
 
 //types
 import { LayoutMainProps } from "./layout-main.types";

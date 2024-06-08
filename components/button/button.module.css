@@ -32,3 +32,8 @@
 .button:active {
   background-color: #e0d0b9;
 }
+
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

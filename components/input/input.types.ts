@@ -1,3 +1,5 @@
-import { HTMLAttributes, InputHTMLAttributes } from "react";
+import { InputHTMLAttributes } from "react";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  isError?: boolean;
+}

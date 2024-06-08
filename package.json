@@ -10,14 +10,21 @@
     "component": "generate-react component"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.6.0",
+    "axios": "^1.7.2",
+    "axios-hooks": "^5.0.2",
     "classnames": "^2.5.1",
+    "js-cookie": "^3.0.5",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-h5-audio-player": "^3.9.1"
+    "react-h5-audio-player": "^3.9.1",
+    "react-hook-form": "^7.51.5",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

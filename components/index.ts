@@ -5,3 +5,4 @@ export * from "./button";
 export * from "./container";
 export * from "./player-audio";
 export * from "./textarea";
+export * from "./toggle";
