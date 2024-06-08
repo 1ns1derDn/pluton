@@ -1,2 +1,31 @@
 .meditationMeeting {
 }
+
+.bg {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title {
+  margin-bottom: 60px;
+}
+
+.audio {
+  margin-bottom: 60px;
+}
+
+.wrapper {
+  margin-bottom: 90px;
+}
+
+.btn {
+  max-width: 340px;
+  margin: 0 auto 120px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}

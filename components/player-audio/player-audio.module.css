@@ -1,0 +1,34 @@
+.playerAudio {
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid #eae4c0;
+
+  max-width: 800px;
+}
+
+.playerAudio :global(.rhap_time) {
+  color: #fff;
+}
+
+.playerAudio :global(.rhap_repeat-button) {
+  color: #fff;
+}
+
+.playerAudio :global(.rhap_main-controls-button) {
+  color: #fff;
+}
+
+.playerAudio :global(.rhap_volume-button) {
+  color: #fff;
+}
+.playerAudio :global(.rhap_volume-indicator) {
+  background: #fff;
+}
+
+.playerAudio :global(.rhap_progress-indicator) {
+  background: #fff;
+}
+
+.playerAudio :global(.rhap_progress-filled) {
+  background-color: #fff;
+}
