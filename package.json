@@ -20,6 +20,7 @@
     "react-dom": "^18",
     "react-h5-audio-player": "^3.9.1",
     "react-hook-form": "^7.51.5",
+    "react-toastify": "^10.0.5",
     "yup": "^1.4.0"
   },
   "devDependencies": {

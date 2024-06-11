@@ -6,7 +6,7 @@ import cn from "classnames";
 import { TypographyProps } from "./typography.types";
 
 // styles
-import styles from "./Typography.module.css";
+import styles from "./typography.module.css";
 
 const defaultElement = "div";
 

@@ -1,6 +1,9 @@
 //fonts
 import { Noto_Sans } from "next/font/google";
 
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 import "@/styles/global.css";
 
 const fontPrimary = Noto_Sans({
@@ -15,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fontPrimary.className}>{children}</body>
+      <body className={fontPrimary.className}>
+        {children}
+        <ToastContainer />
+      </body>
     </html>
   );
 }

@@ -1,6 +1,3 @@
-.meditationMeeting {
-}
-
 .bg {
   background-position: center;
   background-repeat: no-repeat;
@@ -28,4 +25,46 @@
   align-items: center;
   flex-direction: column;
   gap: 60px;
+}
+
+@media (max-width: 1200px) {
+  .meditationMeeting {
+    padding: 0 15%;
+  }
+
+  .title {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto 60px;
+  }
+
+  .wrapper {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .audio {
+    margin-bottom: 40px;
+  }
+
+  .wrapper {
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    margin-bottom: 80px;
+  }
+
+  .form {
+    gap: 40px;
+  }
+
+  .meditationMeeting {
+    padding: 0;
+  }
 }

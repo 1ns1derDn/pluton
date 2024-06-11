@@ -2,6 +2,7 @@
 import React from "react";
 import cn from "classnames";
 import Image from "next/image";
+import Link from "next/link";
 //types
 import { CourseCardProps } from "./course-card.types";
 
@@ -24,10 +25,18 @@ export function CourseCard({
       <Typography className={styles.title} variant="subtitle">
         {title}
       </Typography>
-      <Image className={styles.image} width={320} height={220} src={imageSrc} alt="Картинка" />
-      <Button as="a" href={buttonHref}>
-        Подробнее
-      </Button>
+      <Image
+        className={styles.image}
+        width={340}
+        height={200}
+        quality={100}
+        src={imageSrc}
+        priority
+        alt="Картинка"
+      />
+      <Link href={buttonHref} passHref legacyBehavior>
+        <Button as="a">Подробнее</Button>
+      </Link>
     </div>
   );
 }

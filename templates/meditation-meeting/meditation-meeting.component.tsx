@@ -7,7 +7,12 @@ import { MeditationMeetingProps } from "./meditation-meeting.types";
 
 //styles
 import styles from "./meditation-meeting.module.css";
-import { Button, PlayerAudio, Textarea, Typography } from "@/components";
+
+//components
+import { Button, PlayerAudio, Typography } from "@/components";
+
+//organizm
+import { Feedback } from "@/organizm";
 
 export function MeditationMeeting({ className, children, ...otherProps }: MeditationMeetingProps) {
   return (
@@ -47,13 +52,7 @@ export function MeditationMeeting({ className, children, ...otherProps }: Medita
       </div>
       <Button className={styles.btn}>PlutoN Consultation</Button>
 
-      <form className={styles.form}>
-        <Typography className={styles.title} variant="subtitle">
-          Буду благодарна за оставленный отзыв
-        </Typography>
-        <Textarea />
-        <Button>Отправить</Button>
-      </form>
+      <Feedback />
     </div>
   );
 }

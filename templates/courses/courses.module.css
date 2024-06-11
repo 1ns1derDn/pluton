@@ -14,3 +14,19 @@
 .item {
   flex-basis: 360px;
 }
+
+@media(max-width: 800px) {
+  .titel {
+    text-align: center;
+  }
+  .list {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media(max-width: 640px) {
+  .titel {
+    margin-bottom: 30px;
+  }
+}

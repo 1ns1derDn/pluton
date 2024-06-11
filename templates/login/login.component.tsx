@@ -5,6 +5,8 @@ import cn from "classnames";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/navigation";
+
 //components
 import { Input, Logo, Button, Container, Typography, Toggle } from "@/components";
 
@@ -20,6 +22,7 @@ import { serverLogin } from "@/services";
 import { schemeLogin } from "./login.validate";
 
 export function Login({ className, children, ...otherProps }: LoginProps) {
+  const rotuer = useRouter();
   const {
     register,
     handleSubmit,
@@ -39,6 +42,7 @@ export function Login({ className, children, ...otherProps }: LoginProps) {
   const onSubmit = async (data: ILogin) => {
     try {
       await serverLogin(data);
+      rotuer.push("/courses");
     } catch (error) {
       if (axios.isAxiosError<ILoginError>(error)) {
         const response = await error.response;

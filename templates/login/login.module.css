@@ -8,10 +8,12 @@
 
 .title {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .subtitle {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .log {
@@ -34,6 +36,16 @@
 }
 
 .from {
-  max-width: 480px;
+  max-width: 460px;
   width: 100%;
+}
+
+@media (max-width: 640px) {
+  .logo {
+    max-width: 164px;
+    margin-bottom: 40px;
+  }
+  .password {
+    margin-bottom: 30px;
+  }
 }

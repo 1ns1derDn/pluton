@@ -1,0 +1,17 @@
+.btn {
+  max-width: 340px;
+  margin: 0 auto 120px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+
+@media (max-width: 640px) {
+  .form {
+    gap: 40px;
+  }
+}
