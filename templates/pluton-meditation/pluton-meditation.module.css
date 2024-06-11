@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  gap: 40px;
+}
+.item {
+  max-width: 560px;
+}
+.itemTitle {
+  margin-bottom: 30px;
+}
+.itemText {
+  margin-bottom: 30px;
+}
+
+.itemAudio {
+  margin-bottom: 60px;
+}
+
+.playerWrapper {
+  position: relative;
+  padding-top: 56.25%; /* Соотношение сторон 16:9 (56.25% = 9 / 16 * 100) */
+}
+
+.reactPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+}
