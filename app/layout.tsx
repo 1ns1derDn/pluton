@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "@/styles/global.css";
 
 const fontPrimary = Noto_Sans({
-  weight: ["400", "500", "700"],
+  weight: ["300", "400", "500", "700"],
   subsets: ["cyrillic"],
 });
 
