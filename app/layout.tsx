@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={fontPrimary.className}>
+    <html lang="ru">
+      <body className={fontPrimary.className} suppressHydrationWarning={true}>
         {children}
         <ToastContainer />
       </body>

@@ -1,0 +1,53 @@
+.select :global(.select__control) {
+  background-color: transparent;
+  height: 59px;
+  border: 2px solid #e0d1ba;
+  border-radius: 10px;
+}
+
+.select :global(.select__control:hover) {
+  border: 2px solid #e0d1ba;
+}
+
+.select :global(.select__menu) {
+  background-color: #e0d1ba;
+  border: 2px solid #e0d1ba;
+  border-radius: 10px;
+}
+
+.select :global(.select__indicator:hover) {
+  color: #e0d1ba;
+}
+
+.select :global(.select__single-value) {
+  color: #fff;
+}
+
+.select :global(.select__placeholder) {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.79px;
+  color: #aea3c1;
+}
+
+.select :global(.select__option) {
+  cursor: pointer;
+  color: #564730;
+}
+
+.select :global(.select__option--is-focused) {
+  background-color: transparent;
+}
+
+.select :global(.select__option--is-selected) {
+  background-color: #fcddae;
+}
+
+.select :global(.select__control--is-focused) {
+  box-shadow: none;
+  border: 2px solid #e0d1ba;
+}
+
+.select :global(.select__option--is-focused) {
+  background-color: transparent !important;
+}
