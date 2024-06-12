@@ -122,7 +122,9 @@ export function PlutonMeditation({ className, children, ...otherProps }: Meditat
         </div>
       </div>
 
-      <Button className={styles.button}>PlutoN Consultation </Button>
+      <Button className={styles.button} as="a" href="https://t.me/yuliyapluto" target="_black">
+        PlutoN Consultation
+      </Button>
 
       <Dialog ref={controller}>
         <img className={styles.imageBig} src={image} alt="image" />

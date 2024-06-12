@@ -56,11 +56,32 @@
   margin: 0 auto 60px;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
   .wrapper {
     flex-direction: column;
   }
   .item {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    margin-bottom: 30px;
+  }
+  .playerWrapper {
+    margin-bottom: 30px;
+  }
+  .itemTitle {
+    margin-bottom: 20px;
+  }
+  .itemAudio {
+    margin-bottom: 30px;
+  }
+  .wrapper {
+    margin-bottom: 40px;
+  }
+  .button {
+    margin-bottom: 30px;
   }
 }

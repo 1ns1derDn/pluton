@@ -50,7 +50,9 @@ export function MeditationMeeting({ className, children, ...otherProps }: Medita
         <br />
         <Typography variant="text">С любовью, Юлия</Typography>
       </div>
-      <Button className={styles.btn}>PlutoN Consultation</Button>
+      <Button className={styles.btn} as="a" href="https://t.me/yuliyapluto" target="_black">
+        PlutoN Consultation
+      </Button>
 
       <Feedback />
     </div>

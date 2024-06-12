@@ -90,6 +90,7 @@ export function Login({ className, children, ...otherProps }: LoginProps) {
               className={styles.password}
               placeholder="Ваш пароль"
               type="password"
+              hidden
               {...register("password")}
               isError={!!Object.keys(errors).length}
             />

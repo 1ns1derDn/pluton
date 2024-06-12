@@ -10,15 +10,17 @@
 }
 
 .logo {
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .title {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .text {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .form {
@@ -32,4 +34,20 @@
 
 .select {
   margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .buyMeetingMeditation {
+    padding: 50px 0;
+  }
+  .logo {
+    width: 164px;
+    margin-bottom: 30px;
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+  .text {
+    margin-bottom: 20px;
+  }
 }
