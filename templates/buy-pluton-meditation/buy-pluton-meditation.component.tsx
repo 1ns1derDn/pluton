@@ -4,21 +4,21 @@ import React, { useEffect, useState } from "react";
 import cn from "classnames";
 
 //types
-import { BuyMeetingMeditationProps } from "./buy-meeting-meditation.types";
+import { IBuyPlutonMeditationProps } from "./buy-pluton-meditation.types";
 import { IAvailablePeriods } from "@/types/available-periods.types";
 
 //styles
-import styles from "./buy-meeting-meditation.module.css";
-import { Button, Container, Input, Logo, Select, Typography } from "@/components";
+import styles from "./buy-pluton-meditation.module.css";
+import { Button, Container, Input, Logo, Select, Typography, InputDate } from "@/components";
 
 //api
 import { serverAvailablePeriods } from "@/services/available-periods.api";
 
-export function BuyMeetingMeditation({
+export function BuyPlutonMeditation({
   className,
   children,
   ...otherProps
-}: BuyMeetingMeditationProps) {
+}: IBuyPlutonMeditationProps) {
   const [availablePeriods, setAvailablePeriods] = useState<IAvailablePeriods[]>();
 
   const load = async () => {
@@ -31,18 +31,20 @@ export function BuyMeetingMeditation({
   }, []);
 
   return (
-    <div className={cn([styles.buyMeetingMeditation, className])} {...otherProps}>
+    <div className={cn([styles.buyPlutonMeditation, className])} {...otherProps}>
       <Container>
         <div className={styles.inner}>
           <Logo className={styles.logo} />
           <Typography className={styles.title} variant="title">
-            Медитация на встречу второй половинки
+            PlutoN Meditation
           </Typography>
           <Typography className={styles.text} variant="text">
-            Введите почту на которую прийдет логин и пароль для входа в личный кабинет
+            Введите почту на которую прийдет логин и пароль для входа в личный кабинет и дату
+            рождения, в формате: день, месяц, год (полностью).
           </Typography>
           <form className={styles.form}>
             <Input className={styles.email} placeholder="E-mail" />
+            <InputDate className={styles.date} />
             <Select
               className={styles.select}
               options={availablePeriods?.map(({ currency_code, price }) => ({

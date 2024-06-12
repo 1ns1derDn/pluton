@@ -7,3 +7,4 @@ export * from "./player-audio";
 export * from "./textarea";
 export * from "./toggle";
 export * from "./select";
+export * from "./input-date";
