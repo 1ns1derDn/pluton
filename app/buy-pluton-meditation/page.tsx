@@ -1,5 +1,10 @@
+import { LayoutFooter } from "@/layouts";
 import { BuyPlutonMeditation } from "@/templates";
 
 export default function BuyPlutonMeditationPage() {
-  return <BuyPlutonMeditation />;
+  return (
+    <LayoutFooter>
+      <BuyPlutonMeditation />
+    </LayoutFooter>
+  );
 }

@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "@/styles/global.css";
+import { AuthProvider } from "@/context";
 
 const fontPrimary = Noto_Sans({
   weight: ["300", "400", "500", "700"],
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={fontPrimary.className} suppressHydrationWarning={true}>
-        {children}
+        <AuthProvider>{children}</AuthProvider>
         <ToastContainer />
       </body>
     </html>

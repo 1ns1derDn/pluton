@@ -1,5 +1,10 @@
+import { LayoutFooter } from "@/layouts";
 import { BuyMeetingMeditation } from "@/templates";
 
 export default function BuyMeetingMeditationPage() {
-  return <BuyMeetingMeditation />;
+  return (
+    <LayoutFooter>
+      <BuyMeetingMeditation />
+    </LayoutFooter>
+  );
 }

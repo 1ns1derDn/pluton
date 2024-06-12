@@ -1,11 +1,11 @@
 "use client";
 // libs
-import React from "react";
+import React, { useEffect } from "react";
 import cn from "classnames";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 //components
 import { Input, Logo, Button, Container, Typography, Toggle } from "@/components";
@@ -20,9 +20,11 @@ import styles from "./login.module.css";
 //api
 import { serverLogin } from "@/services";
 import { schemeLogin } from "./login.validate";
+import { useAuth } from "@/context";
 
 export function Login({ className, children, ...otherProps }: LoginProps) {
-  const rotuer = useRouter();
+  const router = useRouter();
+  const { isAuth } = useAuth();
   const {
     register,
     handleSubmit,
@@ -42,7 +44,7 @@ export function Login({ className, children, ...otherProps }: LoginProps) {
   const onSubmit = async (data: ILogin) => {
     try {
       await serverLogin(data);
-      rotuer.push("/courses");
+      router.push("/courses");
     } catch (error) {
       if (axios.isAxiosError<ILoginError>(error)) {
         const response = await error.response;
@@ -50,6 +52,10 @@ export function Login({ className, children, ...otherProps }: LoginProps) {
       }
     }
   };
+
+  useEffect(() => {
+    if (isAuth) router.replace("/courses");
+  }, [isAuth, router]);
 
   return (
     <main className={cn([styles.login, className])} {...otherProps}>
