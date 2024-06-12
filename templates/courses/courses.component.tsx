@@ -38,7 +38,7 @@ export function Courses({ className, children, ...otherProps }: CoursesProps) {
       <ul className={styles.list}>
         {access?.pluton_meditation && (
           <li className={styles.item}>
-            <CourseCard imageSrc="/meditation-1.jpg" buttonHref="/" title="PlutoN Meditation" />
+            <CourseCard imageSrc="/meditation-1.jpg" buttonHref="/pluton-meditation" title="PlutoN Meditation" />
           </li>
         )}
 

@@ -8,3 +8,4 @@ export * from "./textarea";
 export * from "./toggle";
 export * from "./select";
 export * from "./input-date";
+export * from "./dialog";

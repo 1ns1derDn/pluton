@@ -7,7 +7,6 @@ import { LayoutMainProps } from "./layout-main.types";
 //styles
 import styles from "./layout-main.module.css";
 import { Container, Logo } from "@/components";
-import { https } from "@/core/axios";
 
 export function LayoutMain({ className, children, ...otherProps }: LayoutMainProps) {
   return (
@@ -16,6 +15,7 @@ export function LayoutMain({ className, children, ...otherProps }: LayoutMainPro
         <Logo className={styles.logo} />
         {children}
       </Container>
+      <div id="dialog" />
     </main>
   );
 }

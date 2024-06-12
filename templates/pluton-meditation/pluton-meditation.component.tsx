@@ -1,29 +1,58 @@
 "use client";
 // libs
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import cn from "classnames";
+import dynamic from "next/dynamic";
 
 //types
 import { MeditationMeetingProps } from "./pluton-meditation.types";
-
+import { DialogRef } from "@/components/dialog/dialog.types";
 //styles
 import styles from "./pluton-meditation.module.css";
 
 //components
-import { PlayerAudio, Typography } from "@/components";
+import { PlayerAudio, Typography, Dialog, Button } from "@/components";
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 //organizm
 import { Feedback } from "@/organizm";
-
-import ReactPlayer from "react-player";
+import { getDopNumbers } from "@/utils/dop-numebrs";
+import { serverMeditation } from "@/services";
 
 export function PlutonMeditation({ className, children, ...otherProps }: MeditationMeetingProps) {
+  const [image, setImage] = useState<string>();
+  const controller = useRef<DialogRef>(null);
+  const [data, setData] = useState<{
+    image_1: string;
+    image_2: string;
+    audio_1: string;
+    audio_2: string;
+  }>();
+
+  const handleClick = (image: string) => () => {
+    setImage(image);
+    controller.current?.open();
+  };
+
+  console.log(data);
+
+  const load = async () => {
+    const numbers = getDopNumbers("20.12.1998");
+    const response = await serverMeditation(numbers[1], numbers[3]);
+
+    setData(response.data);
+  };
+
+  useEffect(() => {
+    load();
+  }, []);
+
   return (
     <div className={cn([styles.meditationMeeting, className])} {...otherProps}>
       <Typography className={styles.title} variant="title">
         PlutoN Meditation
       </Typography>
-      <Typography className={styles.title} variant="text">
+      <Typography className={styles.text} variant="text">
         Привет, здесь находится урок по медитации. В практиках очень важно понять саму суть и делать
         их правильно - так результат случится гораздо быстрее. Всю информация о медитациях я
         подготовила для тебя в этом видео. Приятного просмотра!
@@ -32,7 +61,7 @@ export function PlutonMeditation({ className, children, ...otherProps }: Meditat
       <div className={styles.playerWrapper}>
         <ReactPlayer
           className={styles.reactPlayer}
-          url={"https://www.youtube.com/watch?v=_Z5coMfFloc"}
+          url={"https://youtu.be/9ziK-pYgU2Q?si=mDWT7DiFyQOj1-2A"}
           controls
           width="100%"
           height="100%"
@@ -54,8 +83,16 @@ export function PlutonMeditation({ className, children, ...otherProps }: Meditat
             никогда не сможет раскрыть свой потенциал и решить задачи. Очень важно это отследить и
             вывести в плюс.
           </Typography>
-          <PlayerAudio className={styles.itemAudio} />
-          <img className={styles.image} src="/number_11.jpeg" alt="img" />
+          <PlayerAudio
+            src={`https://adminka.space/${data?.audio_1}`}
+            className={styles.itemAudio}
+          />
+          <img
+            className={styles.image}
+            src={`https://adminka.space/${data?.image_1}`}
+            alt="img"
+            onClick={handleClick(`https://adminka.space/${data?.image_1}`)}
+          />
         </div>
 
         <div className={styles.item}>
@@ -72,11 +109,24 @@ export function PlutonMeditation({ className, children, ...otherProps }: Meditat
             никогда не сможет раскрыть свой потенциал и решить задачи. Очень важно это отследить и
             вывести в плюс.
           </Typography>
-          <PlayerAudio className={styles.itemAudio} />
-          <img className={styles.image} src="/number_11.jpeg" alt="img" />
+          <PlayerAudio
+            src={`https://adminka.space/${data?.audio_2}`}
+            className={styles.itemAudio}
+          />
+          <img
+            className={styles.image}
+            src={`https://adminka.space/${data?.image_2}`}
+            alt="img"
+            onClick={handleClick(`https://adminka.space/${data?.image_2}`)}
+          />
         </div>
       </div>
 
+      <Button className={styles.button}>PlutoN Consultation </Button>
+
+      <Dialog ref={controller}>
+        <img className={styles.imageBig} src={image} alt="image" />
+      </Dialog>
       <Feedback />
     </div>
   );

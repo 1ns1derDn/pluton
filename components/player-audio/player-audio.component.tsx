@@ -11,7 +11,7 @@ import { PlayerAudioProps } from "./player-audio.types";
 //styles
 import styles from "./player-audio.module.css";
 
-export function PlayerAudio({ className, children, ...otherProps }: PlayerAudioProps) {
+export function PlayerAudio({ className, children, src, ...otherProps }: PlayerAudioProps) {
   return (
     <Player
       className={cn([styles.playerAudio, className])}
@@ -19,7 +19,7 @@ export function PlayerAudio({ className, children, ...otherProps }: PlayerAudioP
       showDownloadProgress={false}
       defaultDuration="00:00"
       defaultCurrentTime="00:00"
-      src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+      src={src}
     />
   );
 }

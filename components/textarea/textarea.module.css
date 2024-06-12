@@ -1,3 +1,8 @@
+.wrapper {
+  display: block;
+  width: 100%;
+}
+
 .textarea {
   display: block;
   width: 100%;
@@ -22,4 +27,12 @@
   font-weight: 400;
   line-height: 21.79px;
   color: #aea3c1;
+}
+
+.error {
+  border-color: #fe3f3f;
+}
+
+.messageError {
+  color: #fe3f3f;
 }

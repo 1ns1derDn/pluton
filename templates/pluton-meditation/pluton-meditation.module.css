@@ -1,24 +1,15 @@
-.wrapper {
-  display: flex;
-  gap: 40px;
-}
-.item {
-  max-width: 560px;
-}
-.itemTitle {
-  margin-bottom: 30px;
-}
-.itemText {
-  margin-bottom: 30px;
+.title {
+  margin-bottom: 60px;
 }
 
-.itemAudio {
-  margin-bottom: 60px;
+.text {
+  margin-bottom: 30px;
 }
 
 .playerWrapper {
   position: relative;
-  padding-top: 56.25%; /* Соотношение сторон 16:9 (56.25% = 9 / 16 * 100) */
+  padding-top: 56.25%;
+  margin-bottom: 60px;
 }
 
 .reactPlayer {
@@ -29,6 +20,47 @@
   height: 100%;
 }
 
+.item {
+  max-width: 560px;
+}
+
+.itemTitle {
+  margin-bottom: 30px;
+}
+
+.itemText {
+  margin-bottom: 30px;
+}
+
+.itemAudio {
+  margin-bottom: 60px;
+}
+
 .image {
   width: 100%;
+  cursor: pointer;
+}
+
+.imageBig {
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 120px;
+}
+
+.button {
+  max-width: 340px;
+  margin: 0 auto 60px;
+}
+
+@media(max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .item {
+    max-width: 100%;
+  }
 }

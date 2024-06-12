@@ -44,7 +44,7 @@ export function Login({ className, children, ...otherProps }: LoginProps) {
   const onSubmit = async (data: ILogin) => {
     try {
       await serverLogin(data);
-      router.push("/courses");
+      router.replace("/courses");
     } catch (error) {
       if (axios.isAxiosError<ILoginError>(error)) {
         const response = await error.response;

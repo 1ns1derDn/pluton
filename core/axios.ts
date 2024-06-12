@@ -90,11 +90,16 @@ https.interceptors.response.use(
           refresh: getRefreshFromStorage(),
         });
 
+        console.log("data", access, refresh);
+        
+
         setTokenToStorage(access);
         setRefreshToStorage(refresh);
 
         return https.request(originRequest);
       } catch (error) {
+        console.log("error", error.response);
+        
         removeRefreshFromStorage();
         removeTokenFromStorage();
         throw error;

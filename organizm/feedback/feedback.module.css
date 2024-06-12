@@ -10,7 +10,14 @@
   gap: 60px;
 }
 
-@media (max-width: 640px) {
+.button {
+  max-width: 340px;
+}
+
+@media (max-width: 767px) {
+  .title {
+    text-align: center;
+  }
   .form {
     gap: 40px;
   }
