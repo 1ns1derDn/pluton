@@ -35,10 +35,6 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       router.push("/login");
     }
 
-    if (!getTokenFromStorage()) {
-      router.push("/login");
-    }
-
     setLoading(false);
   }, [pathname, router]);
 
