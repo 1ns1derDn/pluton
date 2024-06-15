@@ -5,6 +5,10 @@
   border-radius: 10px;
 }
 
+.select.error :global(.select__control) {
+  border-color: #fe3f3f;
+}
+
 .select :global(.select__control:hover) {
   border: 2px solid #e0d1ba;
 }
@@ -50,4 +54,8 @@
 
 .select :global(.select__option--is-focused) {
   background-color: transparent !important;
+}
+
+.messageError {
+  color: #fe3f3f;
 }

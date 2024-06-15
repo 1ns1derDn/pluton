@@ -5,8 +5,17 @@
   background-size: contain;
 }
 
-.logo {
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 53px;
+}
+
+.button {
+  align-self: flex-start;
+  width: 150px;
+  height: 40px;
 }
 
 @media (max-width: 1024px) {
@@ -14,8 +23,14 @@
     background-size: 1024px;
   }
   .logo {
-    display: block;
-    margin: 0 auto 30px;
     width: 150px;
+  }
+  .wrapper {
+    margin-bottom: 30px;
+  }
+  .button {
+    align-self: flex-start;
+    width: 120px;
+    height: 30px;
   }
 }

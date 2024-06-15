@@ -37,3 +37,7 @@
 .error {
   border-color: #fe3f3f;
 }
+
+.messageError {
+  color: #fe3f3f;
+}

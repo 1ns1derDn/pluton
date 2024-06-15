@@ -18,6 +18,8 @@ const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 import { Feedback } from "@/organizm";
 import { getDopNumbers } from "@/utils/dop-numebrs";
 import { serverMeditation } from "@/services";
+import { IBoughtSubscription } from "@/types/bought-subscription.types";
+import { serverBoughtSubscription } from "@/services/bought-subscription.api";
 
 export function PlutonMeditation({ className, children, ...otherProps }: MeditationMeetingProps) {
   const [image, setImage] = useState<string>();
@@ -37,10 +39,13 @@ export function PlutonMeditation({ className, children, ...otherProps }: Meditat
   };
 
   const load = async () => {
-    const numbers = getDopNumbers("20.12.1998");
-    const response = await serverMeditation(numbers[1], numbers[3]);
-
-    setData(response.data);
+    const res2 = await serverBoughtSubscription();
+    const date = res2.data.date_of_birth.split("-");
+    const numbers = getDopNumbers(`${date[2]}.${date[1]}.${date[0]}`);
+    console.log(numbers);
+    
+    const res1 = await serverMeditation(numbers[1], numbers[3]);
+    setData(res1.data);
   };
 
   useEffect(() => {

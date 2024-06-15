@@ -8,7 +8,8 @@ import { LayoutMainProps } from "./layout-main.types";
 
 //styles
 import styles from "./layout-main.module.css";
-import { Container, Logo } from "@/components";
+import { Button, Container, Logo } from "@/components";
+import { useAuth } from "@/context";
 
 const backgrounds: any = {
   ["/meditation-of-meeting"]: "url(/backgrounds/medition.png)",
@@ -17,6 +18,7 @@ const backgrounds: any = {
 
 export function LayoutMain({ className, children, ...otherProps }: LayoutMainProps) {
   const pathname = usePathname();
+  const { logout } = useAuth();
   return (
     <main
       className={cn([styles.layoutMain, className])}
@@ -24,9 +26,14 @@ export function LayoutMain({ className, children, ...otherProps }: LayoutMainPro
       style={{ backgroundImage: backgrounds[pathname] }}
     >
       <Container>
-        <Link href="/courses">
-          <Logo className={styles.logo} />
-        </Link>
+        <div className={styles.wrapper}>
+          <Link href="/courses">
+            <Logo className={styles.logo} />
+          </Link>
+          <Button className={styles.button} onClick={logout}>
+            Выход
+          </Button>
+        </div>
 
         {children}
       </Container>

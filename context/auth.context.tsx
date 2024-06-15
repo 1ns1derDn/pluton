@@ -41,6 +41,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const logout = async () => {
     removeTokenFromStorage();
     setIsAuth(false);
+    router.push("/login");
   };
 
   return (

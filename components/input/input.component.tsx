@@ -8,21 +8,23 @@ import { InputProps } from "./input.types";
 import styles from "./input.module.css";
 
 function ComponentInput(
-  { className, children, isError, ...otherProps }: InputProps,
+  { className, children, isError, messageError, ...otherProps }: InputProps,
   ref: LegacyRef<HTMLInputElement>
 ) {
   return (
-    <input
-      ref={ref}
-      className={cn([
-        styles.input,
-        className,
-        {
-          [styles.error]: isError,
-        },
-      ])}
-      {...otherProps}
-    />
+    <div className={className}>
+      <input
+        ref={ref}
+        className={cn([
+          styles.input,
+          {
+            [styles.error]: isError,
+          },
+        ])}
+        {...otherProps}
+      />
+      {messageError && <span className={styles.messageError}>{messageError}</span>}
+    </div>
   );
 }
 

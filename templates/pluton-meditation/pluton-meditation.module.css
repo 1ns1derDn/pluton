@@ -35,6 +35,7 @@
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   cursor: pointer;
+
 }
 
 .item {
@@ -80,6 +81,12 @@
   .item {
     max-width: 100%;
   }
+  .introPlay {
+    width: 70px;
+  }
+  .intro {
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -98,7 +105,16 @@
   .wrapper {
     margin-bottom: 40px;
   }
+  .intro {
+    margin-bottom: 76px;
+  }
   .button {
     margin-bottom: 30px;
+  }
+  .introPlay {
+    width: 50px;
+  }
+  .intro {
+    margin-bottom: 25px;
   }
 }

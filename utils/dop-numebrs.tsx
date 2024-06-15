@@ -1,8 +1,3 @@
-const retunOnlyChars = (string: string, char: string) => {
-  const dynamicRegex = new RegExp(`[^${char}]`, "g");
-  return string.replace(dynamicRegex, "");
-};
-
 const deleteDotsFromDate = (date: string) => {
   const regex = /\./g;
   return date.replace(regex, "");
