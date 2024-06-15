@@ -21,7 +21,7 @@ export function MeditationMeeting({ className, children, ...otherProps }: Medita
         <Typography className={styles.title} variant="title">
           Медитация на встречу второй половинки
         </Typography>
-        <PlayerAudio className={styles.audio} />
+        <PlayerAudio src="/meditation-polovinka.mp3" className={styles.audio} />
         <Typography variant="text">
           Привет, моя дорогая. Я подготовила для тебя специальную медитацию, <br />
           которая поможет ускорить встречу с твоей второй половинкой.

@@ -22,6 +22,8 @@ import { serverMeditation } from "@/services";
 export function PlutonMeditation({ className, children, ...otherProps }: MeditationMeetingProps) {
   const [image, setImage] = useState<string>();
   const controller = useRef<DialogRef>(null);
+  const playerRef = useRef(null);
+  const [play, setPlay] = useState<boolean>(false);
   const [data, setData] = useState<{
     image_1: string;
     image_2: string;
@@ -33,8 +35,6 @@ export function PlutonMeditation({ className, children, ...otherProps }: Meditat
     setImage(image);
     controller.current?.open();
   };
-
-  console.log(data);
 
   const load = async () => {
     const numbers = getDopNumbers("20.12.1998");
@@ -58,15 +58,43 @@ export function PlutonMeditation({ className, children, ...otherProps }: Meditat
         подготовила для тебя в этом видео. Приятного просмотра!
       </Typography>
 
-      <div className={styles.playerWrapper}>
-        <ReactPlayer
-          className={styles.reactPlayer}
-          url={"https://youtu.be/9ziK-pYgU2Q?si=mDWT7DiFyQOj1-2A"}
-          controls
-          width="100%"
-          height="100%"
-        />
-      </div>
+      {play ? (
+        <div className={styles.playerWrapper}>
+          <ReactPlayer
+            playing={true}
+            className={styles.reactPlayer}
+            ref={playerRef}
+            url={"https://youtu.be/9ziK-pYgU2Q?si=mDWT7DiFyQOj1-2A"}
+            config={{
+              youtube: {
+                playerVars: {},
+              },
+            }}
+            controls
+            width="100%"
+            height="100%"
+          />
+        </div>
+      ) : (
+        <div className={styles.intro}>
+          <img src="intro-youtube.jpg" alt="intro youtube" />
+          <svg
+            className={styles.introPlay}
+            width="116"
+            height="116"
+            viewBox="0 0 116 116"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={() => setPlay(true)}
+          >
+            <circle cx="58" cy="58" r="58" fill="#E0D0B9" />
+            <path
+              d="M98.5 53.1699C101.833 55.0944 101.833 59.9056 98.5 61.8301L42.25 94.3061C38.9167 96.2306 34.75 93.825 34.75 89.976L34.75 25.024C34.75 21.175 38.9167 18.7694 42.25 20.6939L98.5 53.1699Z"
+              fill="#E8FEFF"
+            />
+          </svg>
+        </div>
+      )}
 
       <div className={styles.wrapper}>
         <div className={styles.item}>
