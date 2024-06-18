@@ -19,6 +19,7 @@ const backgrounds: any = {
 export function LayoutMain({ className, children, ...otherProps }: LayoutMainProps) {
   const pathname = usePathname();
   const { logout } = useAuth();
+  const { isAuth } = useAuth();
   return (
     <main
       className={cn([styles.layoutMain, className])}
@@ -30,9 +31,11 @@ export function LayoutMain({ className, children, ...otherProps }: LayoutMainPro
           <Link href="/courses">
             <Logo className={styles.logo} />
           </Link>
-          <Button className={styles.button} onClick={logout}>
-            Выход
-          </Button>
+          {isAuth && (
+            <Button className={styles.button} onClick={logout}>
+              Выход
+            </Button>
+          )}
         </div>
 
         {children}

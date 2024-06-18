@@ -1,15 +1,10 @@
-"use client";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { LayoutFooter } from "@/layouts";
+import { Login } from "@/templates";
 
-const Home = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace("/login");
-  }, [router]);
-
-  return null;
-};
-
-export default Home;
+export default function HomePage() {
+  return (
+    <LayoutFooter>
+      <Login />
+    </LayoutFooter>
+  );
+}

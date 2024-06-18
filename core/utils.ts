@@ -8,7 +8,7 @@ export function getTokenFromStorage() {
 }
 
 export function setTokenToStorage(token: string) {
-  return cookie.set(TOKEN_STORAGE_KEY, token);
+  return cookie.set(TOKEN_STORAGE_KEY, token, { expires: 3600 * 24 * 7 });
 }
 
 export function removeTokenFromStorage() {
@@ -20,7 +20,7 @@ export function getRefreshFromStorage() {
 }
 
 export function setRefreshToStorage(token: string) {
-  return cookie.set(REFRESH_STORAGE_KEY, token);
+  return cookie.set(REFRESH_STORAGE_KEY, token, { expires: 3600 * 24 * 7 });
 }
 
 export function removeRefreshFromStorage() {
