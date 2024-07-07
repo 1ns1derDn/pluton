@@ -111,7 +111,7 @@ export function BuyMeetingMeditation({
             Медитация на встречу второй половинки
           </Typography>
           <Typography className={styles.text} variant="text">
-            Введите почту на которую прийдет логин и пароль для входа в личный кабинет
+            Введите почту на которую придет логин и пароль для входа в личный кабинет
           </Typography>
           <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             <Input

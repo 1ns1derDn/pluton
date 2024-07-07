@@ -112,7 +112,7 @@ export function BuyPlutonMeditation({
             PlutoN Meditation
           </Typography>
           <Typography className={styles.text} variant="text">
-            Введите почту на которую прийдет логин и пароль для входа в личный кабинет и дату
+            Введите почту на которую придет логин и пароль для входа в личный кабинет и дату
             рождения, в формате: день, месяц, год (полностью).
           </Typography>
           <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
