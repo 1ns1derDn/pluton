@@ -16,6 +16,22 @@
   align-self: flex-start;
   width: 150px;
   height: 40px;
+  background-color: transparent;
+  border: 1px solid #e0d0b9;
+  color: #e0d0b9;
+  gap: 9px;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 14px;
+  width: auto;
+}
+
+.button:hover {
+  color: #564730;
+}
+
+.button:hover svg {
+  fill: #564730;
 }
 
 @media (max-width: 1024px) {
