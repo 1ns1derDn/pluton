@@ -1,10 +1,6 @@
 import { LayoutFooter } from "@/layouts";
-import { Login } from "@/templates";
+import { Main } from "@/templates";
 
 export default function HomePage() {
-  return (
-    <LayoutFooter>
-      <Login />
-    </LayoutFooter>
-  );
+  return <Main />;
 }

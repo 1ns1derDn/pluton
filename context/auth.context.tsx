@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
     }
 
     if (!getTokenFromStorage() && accessPage.includes(pathname)) {
-      router.push("/");
+      router.push("/lk");
     }
 
     setLoading(false);
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const logout = async () => {
     removeTokenFromStorage();
     setIsAuth(false);
-    router.push("/");
+    router.push("/lk");
   };
 
   return (
