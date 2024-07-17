@@ -1,5 +1,7 @@
 .main {
   padding: 100px 0 170px;
+  color: #e8feff;
+  background: linear-gradient(180deg, #575e89 0%, #34214a 100%);
 }
 .head {
   display: flex;

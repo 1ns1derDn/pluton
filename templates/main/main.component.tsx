@@ -26,7 +26,7 @@ export function Main({ className, children, ...otherProps }: MainProps) {
 
         <div className={styles.content}>
           <div className={styles.item}>
-            <img className={styles.image} src="/meditation-big-1.jpg" alt="meditation" />
+            <img className={styles.image} src="/meditation-big-1.png" alt="meditation" />
             <div className={styles.box}>
               <Typography className={styles.itemTitle} variant="title">
                 PlutoN Love
