@@ -126,6 +126,7 @@ export function Main({ className, children, ...otherProps }: MainProps) {
           220007, Республика Беларусь, г. Минск, ул. Толстого, 10, кв. 51 <br />
           Тел.: + 375 29 181 00 00 <br />
           E-mail: yuliyapluto@yandex.ru <br />
+          Режим работы: круглосуточно
         </Typography>
       </Container>
     </div>
